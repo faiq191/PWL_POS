@@ -21,9 +21,15 @@ class UserController extends Controller
         // UserModel::create($data);
 
         // coba akses model UserModel
-        $user = UserModel::findOr(20, ['username', 'nama'], function () {
-            abort(404);
-        }); // ambil semua data dari tabel m_user
+        $user = UserModel::firstOrCreate(
+            [
+                'username' => 'manager22',
+                'nama' => 'Manager Dua Dua',
+                'password' => Hash::make('12345'),
+                'level_id' => 2
+            ],
+        );
+        $user->save();
         return view('user', ['data' => $user]);
     }
 }
