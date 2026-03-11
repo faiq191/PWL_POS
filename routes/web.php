@@ -3,9 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LevelController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\KategoriController;
 
 // Home
 Route::get('/', [HomeController::class, 'index']);
@@ -24,4 +26,11 @@ Route::get('/user/{id}/name/{name}', [UserController::class, 'profile']);
 // Sales
 Route::get('/sales', [SalesController::class, 'index']);
 
+//level
+Route::get('/level', [LevelController::class, 'index']);
 
+//Kat
+Route::get('/kategori', [KategoriController::class, 'index']);
+
+//user
+Route::get('/user', [UserController::class, 'index']);
